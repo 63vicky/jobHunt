@@ -33,7 +33,7 @@ const NavBar = () => {
                       src="https://github.com/shadcn.png"
                       alt="@shadcn"
                     />
-                    <AvatarFallback>CN</AvatarFallback>
+                    <AvatarFallback>VG</AvatarFallback>
                   </Avatar>
                   <div className="flex flex-col">
                     <p className="font-semibold m-0">Vivek Gangani</p>

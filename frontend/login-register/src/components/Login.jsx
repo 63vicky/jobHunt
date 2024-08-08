@@ -34,6 +34,7 @@ const Login = () => {
       headers: {
         "Content-Type": "application/json",
       },
+      withCredentials: true,
       data: data,
     };
 
@@ -45,8 +46,10 @@ const Login = () => {
         // navigate("/");
       })
       .catch((error) => {
-        console.log(error.response.data.message);
-        toast.error(error.response.data.message);
+        if (error.response) {
+          return toast.error(error.response.data.message);
+        }
+        console.log(error);
       });
   };
   return (

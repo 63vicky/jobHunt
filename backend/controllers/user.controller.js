@@ -68,10 +68,10 @@ export const login = async (req, res) => {
     id: user.id,
   };
 
-  const userToken = genToken(userData, "2m");
+  const userToken = await genToken(userData, "2d");
 
   return res
-    .cookie("userToken", userToken, { maxAge: 2 * 60 * 1000, httpOnly: true })
+    .cookie("userToken", userToken, { maxAge: 900000, httpOnly: true })
     .status(200)
     .json({ message: `Welcome Back, ${user.fullName}`, success: true, user });
 };
